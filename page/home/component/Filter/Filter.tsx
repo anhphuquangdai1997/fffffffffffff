@@ -6,9 +6,7 @@ const priceOptions = [
     { label: "Tất cả", value: "all" },
     { label: "Dưới 2 triệu", value: "under2" },
     { label: "Từ 2 - 4 triệu", value: "2to4" },
-    { label: "Từ 4 - 7 triệu", value: "4to7" },
-    { label: "Từ 7 - 13 triệu", value: "7to13" },
-    { label: "Từ 13 - 20 triệu", value: "13to20" },
+
     { label: "Trên 20 triệu", value: "above20" },
 ];
 const categoryOptions = [

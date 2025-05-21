@@ -4,6 +4,8 @@ import { IoIosSearch } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { CiMenuBurger } from "react-icons/ci";
 import { BsCart2 } from "react-icons/bs";
+import { FaUser } from "react-icons/fa";
+import Menu from './Menu';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +25,18 @@ const Navbar = () => {
                     {/* Logo and brand name */}
                     <div className={`flex items-center ${isSearchOpen ? 'md:flex hidden' : 'flex'}`}>
                         <Link to="/" className="flex-shrink-0">
-                            <span className="text-2xl font-bold text-indigo-600">Logo</span>
+                            <img
+                                className="h-auto w-40"
+                                src="https://www.hana-tochi-to.jp/res/img/logo.svg"
+                                alt="Logo"
+                            />
                         </Link>
                     </div>
+                    
 
                     {/* Search Bar - Desktop */}
-                    <div className="hidden md:flex flex-1 items-center justify-center px-4">
+                    <div className="hidden md:flex flex-1 items-center justify-center px-4 gap-5">
+                        <div className='flex items-center'><Menu/></div>
                         <form onSubmit={handleSearch} className="w-full max-w-lg">
                             <div className="relative">
                                 <input
@@ -50,16 +58,18 @@ const Navbar = () => {
 
                     {/* Desktop menu */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link to="/" className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
-                            Home
+                        <Link
+                            to="/login"
+                            className="w-10 h-10 flex items-center justify-center hover:bg-gray-400 text-gray-500 bg-gray-200 border-none rounded-full text-sm font-medium"
+                        >
+                            <FaUser size={20} />
                         </Link>
-                        <Link to="/" className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
-                            About
+                        <Link 
+                            to="/cart" 
+                            className="w-10 h-10 flex justify-center items-center hover:bg-gray-400 text-gray-500 bg-gray-200 border-none rounded-full text-sm font-medium"
+                        >
+                            <BsCart2 size={20} />
                         </Link>
-                        <Link to="/" className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
-                            Services
-                        </Link>
-                        <Link to="/cart" className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium"><BsCart2 size={20} /></Link>
                     </div>
 
                     {/* Mobile Search Bar */}
