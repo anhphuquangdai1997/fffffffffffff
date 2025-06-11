@@ -1,20 +1,22 @@
+
 export interface User {
-    id: string;
-    email: string;
+    _id: string;
     name: string;
-}
+    email: string;
+    role: string;
+    avatar?: {
+        public_id: string;
+        url: string;
+    };
+    createdAt: string;
 
-export interface AuthState {
+} 
+export interface UserState {
     user: User | null;
+    token: string | null;
     isAuthenticated: boolean;
-    isLoading: boolean;
+    loading: boolean;
+    error: string | null;
+    // users: User[]; // For admin to manage users
 }
 
-export interface LoginCredentials {
-    email: string;
-    password: string;
-}
-
-export interface RegisterCredentials extends LoginCredentials {
-    name: string;
-}

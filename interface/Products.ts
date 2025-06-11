@@ -20,3 +20,15 @@ export interface Product {
             comment: "string"
         }>
 }
+
+export interface ProductState {
+    products: Product[];
+    loading: boolean;
+    error: string | null;
+    currentPage: number;
+    totalPage: number;
+    sortByPrice:null | 'asc' | 'desc';
+    filteredCategory:string;
+    priceRange: [number, number];
+    ratings: number;
+}

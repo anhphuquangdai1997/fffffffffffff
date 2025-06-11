@@ -10,7 +10,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
-        <Link to={`/products/${product._id}`} key={product._id} className="group max-w-[350px] flex flex-col mx-auto bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+        <Link to={`/product/${product._id}`} key={product._id} className="group max-w-[350px] flex flex-col mx-auto bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
             <div className="relative overflow-hidden px-0.5">
                 <img
                     className="w-full md:h-35 sm:h-45 pt-2 object-contain transform group-hover:scale-105 transition-transform duration-300"
